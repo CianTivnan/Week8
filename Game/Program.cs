@@ -50,7 +50,8 @@ namespace Game
                 DisplayScores(Players);
                 Console.Write("Please enter number of player for score update : ");
                 input = int.Parse(Console.ReadLine().Trim());
-                
+
+                Console.WriteLine("hello");
             }
 
         }
@@ -60,7 +61,5 @@ namespace Game
             Console.WriteLine("\n{0,-10} {1,-10} {2,-10} {3,-10} {4,-10}" ,"Player 1" ,"Player 2" ,"Player 3" ,"Player 4" ,"Player 5");
             Console.WriteLine("{0,-10} {1,-10} {2,-10} {3,-10} {4,-10}", players[0].Score, players[1].Score, players[2].Score, players[3].Score, players[4].Score);
         }
-
-        Console.WriteLine();
     }
 }
