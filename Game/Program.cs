@@ -26,6 +26,24 @@ namespace Game
 
             DisplayScores(Players);
 
+            Input(Players);
+
+
+
+            Console.WriteLine("hello");
+
+            Console.WriteLine(highestScore);
+
+            List<Player> DisplayPlayers = new List<Player>();
+            DisplayPlayers.Add(player1);
+            DisplayPlayers.Add(player4);
+
+            DisplayPlayerDetails(DisplayPlayers);
+
+        }
+
+        private static void Input(List<Player> Players)
+        {
             int input = 999;
             Console.Write("Please enter number of player for score update : ");
             input = int.Parse(Console.ReadLine().Trim());
@@ -52,10 +70,16 @@ namespace Game
                 DisplayScores(Players);
                 Console.Write("Please enter number of player for score update : ");
                 input = int.Parse(Console.ReadLine().Trim());
-
-                Console.WriteLine("hello");
             }
+        }
 
+        static void DisplayPlayerDetails(List<Player> players)
+        {
+            Console.WriteLine("{0,-10}{1,-15}{2,-10}" ,"UserID" ,"Username" ,"Score");
+            foreach (Player player in players)
+            {
+                player.ToString();
+            }
         }
 
         static void DisplayScores(List<Player> players)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    class Player
+    class Player : IComparable<Player>
     {
         private int playerID { get; set; }
         public int PlayerID { get; }
@@ -27,9 +27,24 @@ namespace Game
         public void IncreaseScore(int a)
         {
             Score += a;
-            PlayerHighScores.Add(a);
-            Program.highestScore = PlayerHighScores.Max();
+            if (Score > Program.highestScore)
+            {
+                Program.highestScore = this.Score;
+            }
+            
         }
 
+        public void ToString()
+        {
+            string stringID = this.PlayerID.ToString();
+            string stringScore = this.Score.ToString();
+
+            Console.WriteLine("{0,-10}{1,-15}{2,-10}", stringID ,this.PlayerName ,stringScore);  
+        }
+
+        public int CompareTo(Player obj)
+        {
+            return Score.CompareTo(obj.Score);
+        }
     }
 }
