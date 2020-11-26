@@ -8,6 +8,8 @@ namespace Game
 {
     class Program
     {
+        public static int highestScore = 0;
+
         static void Main(string[] args)
         {
             List<Player> Players = new List<Player>();

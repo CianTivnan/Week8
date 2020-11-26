@@ -15,6 +15,8 @@ namespace Game
 
         public int Score { get; set; }
 
+        public List<int> PlayerHighScores = new List<int>();
+
         public Player(int a, string b, int c)
         {
             PlayerID = a;
@@ -25,6 +27,8 @@ namespace Game
         public void IncreaseScore(int a)
         {
             Score += a;
+            PlayerHighScores.Add(a);
+            Program.highestScore = PlayerHighScores.Max();
         }
 
     }
